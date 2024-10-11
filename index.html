@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laba 1</title>
+    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&family=Playfair+Display+SC:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="title">
+          <h1>1.1LAPD</h1>
+          <h1>Laba 1</h1>
+          <h1>Signal low</h1>
+        </div>
+
+        <div class="officer">
+          <div class="leftoff">
+            <p>OFFICER</p>
+            <h1>K D6-3. 7</h1>
+          </div>
+          <div class="rightoff">
+            <p>ACCESS</p>
+            <P>************</P>
+          </div>
+        </div>
+
+        <div class="task">
+          <div class="taskleft">
+            <img alt="Гослинг с усами" src="./images/ryan.jpg"/>
+          </div>
+          <div class="taskright">
+            <h1>Задание 1</h1>
+            <h2>Даны три точки A, B и C на числовой оси. Точка С расположена между точками A и B. Найти произведение длин отрезков AC и BC.</h2>
+          </div>
+        </div>
+
+        <div class="under">
+          <label for="a">Точка A:</label>
+          <input type="number" id="a" placeholder="Введите координату A">
+          <label for="b">Точка B:</label>
+          <input type="number" id="b" placeholder="Введите координату B">
+          <label for="c">Точка C (между A и B):</label>
+          <input type="number" id="c" placeholder="Введите координату C">
+          <button onclick="solveTask1()">Решить задачу 1</button>
+          <p id="result1"></p>
+        </div>
+
+        <div class="officer">
+          <div class="leftoff">
+            <p>OFFICER</p>
+            <h1>K D6-4. 5</h1>
+          </div>
+          <div class="rightoff">
+            <p>ACCESS</p>
+            <P>************</P>
+          </div>
+        </div>
+
+        <div class="task">
+          <div class="taskleft">
+            <img alt="Гослинг с усами" src="./images/officer.jpg"/>
+          </div>
+          <div class="taskright">
+            <h1>Задание 2</h1>
+            <h2>Дано целое число, большее 999. Используя одну операцию деления нацело и одну операцию взятия остатка от деления, найти цифру, соответствующую разряду тысяч в записи этого числа.</h2>
+          </div>
+        </div>
+
+        <div class="under">
+          <label for="number">Введите число (больше 999):</label>
+          <input type="number" id="number" placeholder="Введите число">
+          <button onclick="solveTask2()">Решить задачу 2</button>
+          <p id="result2"></p>
+        </div>
+    </div>
+
+    <script src="./script/script.js"></script>
+</body>
+</html>
