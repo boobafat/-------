@@ -14,6 +14,44 @@ body {
     color: #333;
 }
 
+.menu{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    a{
+        text-decoration: none;
+        font-size: 24px; 
+        padding: 10px 20px;
+        border-color: red;
+        background-color: #111C1E;
+        font-size: 28px;
+        border-radius: 5px;
+        cursor: pointer;
+        
+    }
+    .indicator{
+        display: flex;
+        justify-content: space-between;
+    }
+    .circle1, .circle2, .circle3{
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        border: 2px solid #41484E;
+    }
+    .circle1{
+        background: #e65252;
+    }
+    .circle2{
+        background: #dbdd68c7;
+    }
+    .circle3{
+        background: #64da6a;
+        box-shadow:0 0 25px #3eec3e;
+    }
+}
+
 .container {
     width: 60%;
     margin: 0 auto;
