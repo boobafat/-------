@@ -1,3 +1,12 @@
+function Burger() {
+    let menu = document.getElementById("burger_menu");
+    if (menu.style.display === "none" || menu.style.display === "") {
+        menu.style.display = "block";
+    } else {
+        menu.style.display = "none";
+    }
+}
+
 function solveTask1() {
     var a = parseFloat(document.getElementById("a").value);
     var b = parseFloat(document.getElementById("b").value);
@@ -36,9 +45,9 @@ function solveTask2() {
 }
 
 function solveTask3_1() {
-    var ch1 = parseFloat(document.getElementById("ch1").value);
-    var ch2 = parseFloat(document.getElementById("ch2").value);
-    var ch3 = parseFloat(document.getElementById("ch3").value);
+    var ch1 = parseInt(document.getElementById("ch1").value);
+    var ch2 = parseInt(document.getElementById("ch2").value);
+    var ch3 = parseInt(document.getElementById("ch3").value);
 
     if (ch1 === ch2 || ch2 === ch3 || ch3 === ch1) {
         document.getElementById("result3_1").textContent = `TRUE`;

@@ -4,11 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Laba 3</title>
-    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="../styles/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&family=Playfair+Display+SC:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&display=swap" rel="stylesheet">
 </head>
+
+<header>
+  <h1>by Protsenko V.V.</h1>
+</header>
+
 <body>
     <div class="container">
         <div class="menu">
@@ -18,7 +23,13 @@
             <div class="circle3"></div>
           </div>
           <div class="links">
-            <a href="index.html">Laba 2</a>
+            <div class="burger" onclick="Burger()">MENU</div>
+          </div>
+        </div>
+        <div class="burger_menu" id="burger_menu">
+          <div class="burger_content">
+            <a class="burger_link" href="../index.html">Лабораторная №2</a>
+            <a class="burger_link" href="">Лабораторная №4</a>
           </div>
         </div>
         <div class="title">
@@ -40,7 +51,7 @@
 
         <div class="task">
           <div class="taskleft">
-            <img alt="Гослинг с усами" src="./images/ryan.jpg"/>
+            <img alt="Гослинг с усами" src="../images/ryan.jpg"/>
           </div>
           <div class="taskright">
             <h1>Задание 1</h1>
@@ -72,7 +83,7 @@
 
         <div class="task">
           <div class="taskleft">
-            <img alt="Гослинг с усами" src="./images/officer.jpg"/>
+            <img alt="Гослинг с усами" src="../images/officer.jpg"/>
           </div>
           <div class="taskright">
             <h1>Задание 2</h1>
@@ -95,7 +106,7 @@
 
         <div class="task">
             <div class="taskleft">
-              <img alt="Гослинг с усами" src="./images/officer2.jpg"/>
+              <img alt="Гослинг с усами" src="../images/officer2.jpg"/>
             </div>
             <div class="taskright">
               <h1>Задание 3</h1>
@@ -115,7 +126,7 @@
 
           <div class="task">
             <div class="taskleft">
-              <img alt="Гослинг с усами" src="./images/officer3.jpg"/>
+              <img alt="Гослинг с усами" src="../images/officer3.jpg"/>
             </div>
             <div class="taskright">
               <h1>Задание 4</h1>
@@ -134,6 +145,11 @@
           </div>
     </div>
 
-    <script src="./script/script.js"></script>
+    <script src="../script/script.js"></script>
 </body>
+
+<footer>
+  <p>Никаких прав нет и защищать нечего</p>
+</footer>
+
 </html>

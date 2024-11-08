@@ -9,6 +9,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&family=Playfair+Display+SC:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&display=swap" rel="stylesheet">
 </head>
+
+<header>
+  <h1>by Protsenko V.V.</h1>
+</header>
+
 <body>
     <div class="container">
       <div class="menu">
@@ -18,7 +23,13 @@
           <div class="circle3"></div>
         </div>
         <div class="links">
-          <a href="lbthrd.html">Laba 3</a>
+          <div class="burger" onclick="Burger()">MENU</div>
+        </div>
+      </div>
+      <div class="burger_menu" id="burger_menu">
+        <div class="burger_content">
+          <a class="burger_link" href="./pages/lbthrd.html">Лабораторная №3</a>
+          <a class="burger_link" href="">Лабораторная №4</a>
         </div>
       </div>
         <div class="title">
@@ -90,4 +101,9 @@
 
     <script src="./script/script.js"></script>
 </body>
+
+<footer>
+  <p>Никаких прав нет и защищать нечего</p>
+</footer>
+
 </html>
