@@ -112,3 +112,36 @@ function solveTask3_4() {
 
     document.getElementById("result3_4").textContent = `При Х = ${X_4} Ответ: ${result_4}`;
 }
+
+function solveTask4_1() {
+    let numbers = document.getElementById("numbers").value.trim();
+    let inputNumbers = numbers.split(" ").map(Number);
+
+    let result = "";
+    let previous = null;
+    for (let i = 0; i < inputNumbers.length; i++) {
+
+        let current = inputNumbers[i];
+        
+        if (current !== previous) {
+            result += current + " ";
+            previous = current;
+        }
+    }
+
+    document.getElementById("result4_1").textContent = 'Ответ: ' + result;
+}
+
+function solveTask4_2() {
+    let A = parseInt(document.getElementById("A4").value);
+    let N = parseInt(document.getElementById("N4").value);
+    var sum = 1; 
+    var term = 1; 
+
+    for (let i = 1; i <= N; i++) {
+        term *= A; 
+        sum += term; 
+    }
+
+    document.getElementById("result4_2").textContent = 'Ответ: ' + sum;
+}

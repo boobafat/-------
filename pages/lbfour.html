@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laba 3</title>
+    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&family=Playfair+Display+SC:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&display=swap" rel="stylesheet">
+</head>
+
+<header>
+  <h1>by Protsenko V.V.</h1>
+</header>
+
+<body>
+    <div class="container">
+        <div class="menu">
+          <div class="indicator">
+            <div class="circle1"></div>
+            <div class="circle2"></div>
+            <div class="circle3"></div>
+          </div>
+          <div class="links">
+            <div class="burger" onclick="Burger()">MENU</div>
+          </div>
+        </div>
+        <div class="burger_menu" id="burger_menu">
+          <div class="burger_content">
+            <a class="burger_link" href="../index.html">Лабораторная №2</a>
+            <a class="burger_link" href="">Лабораторная №4</a>
+          </div>
+        </div>
+        <div class="title">
+          <h1>4.1LAPD</h1>
+          <h1>Laba 4</h1>
+          <h1>Signal low</h1>
+        </div>
+
+        <div class="officer">
+          <div class="leftoff">
+            <p>OFFICER</p>
+            <h1>K D6-3. 7</h1>
+          </div>
+          <div class="rightoff">
+            <p>ACCESS</p>
+            <P>************</P>
+          </div>
+        </div>
+
+        <div class="task">
+          <div class="taskleft">
+            <img alt="Гослинг с усами" src="../images/ryan.jpg"/>
+          </div>
+          <div class="taskright">
+            <h1>Задание 1</h1>
+            <h2>Дано целое число N  и набор из N  целых чисел, упорядоченный по возрастанию. Данный набор может содержать одинаковые элементы. Вывес-ти в том же порядке все различные элементы данного набора.</h2>
+          </div>
+        </div>
+
+        <div class="under">
+            <label for="numbers">Введите N чисел через пробел:</label>
+            <input type="text" id="numbers" placeholder="Например: 1 1 2 3 3 4">
+            <button onclick="solveTask4_1()">Решить задачу</button>
+            <p id="result4_1"></p>
+        </div>
+
+        <div class="officer">
+          <div class="leftoff">
+            <p>OFFICER</p>
+            <h1>K D6-4. 5</h1>
+          </div>
+          <div class="rightoff">
+            <p>ACCESS</p>
+            <P>************</P>
+          </div>
+        </div>
+
+        <div class="task">
+          <div class="taskleft">
+            <img alt="Гослинг с усами" src="../images/officer.jpg"/>
+          </div>
+          <div class="taskright">
+            <h1>Задание 2</h1>
+            <h2>Дано  вещественное    число  A  и  целое  число  N    (>  0).  Используя  один цикл, найти сумму 1 + A + A2 + A3 + . . . + AN </h2>
+          </div>
+        </div>
+
+        <div class="under">
+            <label for="a">Число A</label>
+            <input type="number" id="A4" placeholder="Введите 1 число">
+            <label for="b">Число N</label>
+            <input type="number" id="N4" placeholder="Введите 2 число">
+            <button onclick="solveTask4_2()">Решить задачу 2</button>
+            <p id="result4_2"></p>
+        </div>
+
+    </div> 
+    <script src="../script/script.js"></script>
+</body>
+
+<footer>
+    <p>Никаких прав нет и защищать нечего</p>
+</footer>
+
+</html>
