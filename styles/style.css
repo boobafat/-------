@@ -191,6 +191,114 @@ p {
     color: #98A2A8;
 }
 
+.display{
+    background-color: black;
+    width: 100%;
+    height: 500px;
+    border: solid #41484E;
+    border-top:none;
+    text-align: center;
+    button {
+        background: none;
+        font-size: 72px;
+        margin-top: 170px;
+
+    }
+}
+
+.rules{
+
+
+}
+
+.gameZone{
+    width: 100%;
+    height: 100%;
+    background-color: #353535;
+    position: absolute;
+    z-index: 5;
+    top:0px;
+    display: none;
+    .screen{
+        width: 80%;
+        margin: 0 auto;
+        height: 70%;
+        border-top-left-radius: 20%;
+        border-top-right-radius: 20%;
+        background-color: #262626;
+        display: flex;
+        justify-content: center;
+        img{
+            margin-top: 5%;
+            width: auto;
+            max-height: 80%;
+        }
+    }
+    .textField {
+        width: 100%;
+        height: 30%;
+        background-color: #111C1E;
+        padding: 5px 5% 20px 5%;
+        margin-bottom: 20px;
+        color: #98A2A8;
+        display: flex;
+        justify-content: space-between;
+        border-radius: 10px;
+        flex-direction: column;
+        p{  
+            color: #98A2A8;
+        }
+        #rules{
+            display: none;
+            margin: 0;
+            padding: 0;
+        }
+        #arrowBtn{
+            width: 100px;
+            font-size: 32px;
+            height: 50px;
+            margin-left: 98%;
+        }
+        .choices{
+            display: flex;
+            justify-content: space-between;
+            #choice1, #choice2{
+                background-color: #394f53;
+                width: 49%;
+                margin: 0% auto;
+            } 
+        }
+        .pass{
+            display: flex;
+            justify-content: space-between;
+            #password, #pw{
+                width: 49%;
+            }
+        }
+    }
+    #dialogue {
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        width: 90%; 
+        white-space: pre-wrap;
+    }
+
+    .choice-btn {
+        margin-top: 10px;
+    }
+
+    #combatButton {
+        width: 120px;
+        margin: 0 auto;
+        height: 120px;
+        border-radius: 50%;
+        background-color: #ff0000;
+        color: black;
+        font-size: 32px;
+    }
+
+}
+
 @media screen and (max-width: 980px) {
     .burger_menu{
         right: 10%;

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Novella</title>
+    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&family=Playfair+Display+SC:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&display=swap" rel="stylesheet">
+</head>
+
+<header>
+  <h1>by Protsenko V.V.</h1>
+</header>
+
+<body>
+    <div class="container">
+        <div class="menu">
+          <div class="indicator">
+            <div class="circle1"></div>
+            <div class="circle2"></div>
+            <div class="circle3"></div>
+          </div>
+          <div class="links">
+            <div class="burger" onclick="Burger()">MENU</div>
+          </div>
+        </div>
+        <div class="burger_menu" id="burger_menu">
+          <div class="burger_content">
+            <a class="burger_link" href="../index.html">Лабораторная №2</a>
+            <a class="burger_link" href="./lbthrd.html">Лабораторная №3</a>
+            <a class="burger_link" href="./lbfour.html">Лабораторная №4</a>
+          </div>
+        </div>
+        <div class="title">
+          <h1>5.1LAPD</h1>
+          <h1>Laba 5</h1>
+          <h1>Signal low</h1>
+        </div>
+
+        <div class="officer">
+          <div class="leftoff">
+            <p>OFFICER</p>
+            <h1>K D6-3. 7</h1>
+          </div>
+          <div class="rightoff">
+            <p>ACCESS</p>
+            <P>************</P>
+          </div>
+        </div>
+
+        <div class="display">
+            <button onclick="PLAY()">PLAY</button>
+        </div>
+
+        <div class="rules">
+
+        </div>
+
+    </div> 
+
+    <div class="gameZone" id="gameZone">
+        <div class="screen" id="screen">
+            <img id="characterImage" src="" alt="Character" style="display: none;">
+            <img id="backgroundImage" src="" alt="Background" style="display: none;">
+        </div>
+        <div class="textField" id="textField">
+            <p id="dialogue"></p>
+            <p id="rules"></p>
+            <div class="pass">
+              <input type="number" id="pwinp" placeholder="Введите пароль" style="display: none;">
+              <button onclick="enterCode(story['check'],2027)" id="pwrd" style="display: none;" >Ввести</button>
+            </div>
+            <div class="choices">
+              <button id="choice1" style="display: none;"></button>
+              <button id="choice2" style="display: none;"></button>
+            </div>
+            <button id="arrowBtn" style="display: block;">→</button>
+            <button id="combatButton" style="display: none;">PUSH</button> 
+        </div>
+    </div>
+
+    <script src="../script/script.js"></script>
+</body>
+
+<footer>
+    <p>Никаких прав нет и защищать нечего</p>
+</footer>
+
+</html>
