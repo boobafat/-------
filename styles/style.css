@@ -275,6 +275,19 @@ p {
                 width: 49%;
             }
         }
+        .fight{
+            display: flex;
+            justify-content: space-between;
+            button{
+                margin-bottom: 20px;
+                width: 32%;
+            }
+            .counter{
+                display: flex;
+                justify-content: space-between;
+                margin-bottom: 70px;
+            }
+        }
     }
     #dialogue {
         word-wrap: break-word;

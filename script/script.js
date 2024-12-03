@@ -176,36 +176,35 @@ const story = {
             "Через мгновение устройство расшифровало послание.",
             "Люси ещё жива. Найди её в Оазисе."
         ],
-        image: "../images/start.webp",  // Путь к картинке для сцены start
+        image: "../images/start.webp",
         choices: [
             { text: "Отправиться в Оазис немедленно", next: "go_oasis" },
-            { text: "Попробовать расшифровать больше данных", next: "decrypt_data" }
+            { text: "Попробовать расшифровать больше данных", next: "check" }
         ]
     },
-    go_oasis: {
+    go_oasis: { // Отправиться в Оазис немедленно
         text: "Райан собирает снаряжение и отправляется в путь. На горизонте уже виднеются очертания Оазиса...",
-        image: "../images/Oasis.webp",  // Путь к картинке для сцены go_oasis
+        image: "../images/Oasis.webp", 
         choices: [
             { text: "Войти осторожно", next: "cautious_entry" },
             { text: "Ворваться с боем", next: "combat_entry" }
         ]
     },
-    decrypt_data: {
+    decrypt_data: { // Попоробовать расшифровать больше данных
         text: "Райан находит скрытые координаты и узнаёт больше об Оазисе. Это место может быть опаснее, чем он думал.",
         image: "../images/decrypt_data.webp",  // Путь к картинке для сцены decrypt_data
         choices: [
-            { text: "Теперь отправиться в Оазис", next: "go_oasis" },
+            { text: "Теперь отправиться в Оазис", next: "go_oasis" }, 
             { text: "Связаться с союзниками", next: "contact_allies" }
         ]
     },
-    cautious_entry: {
+    cautious_entry: { // Войти острожно
         text: "Райан тихо пробирается в Оазис, избегая охранников. Он чувствует, что на верном пути.",
         image: "../images/cautious_entry.webp",
         choices: [
             { text: "Исследовать Оазис дальше", next: "find_love" }
         ]
-    },
-    find_love: {
+    },    find_love: { // Исследовать оазис дальше
         text: "Райан находит люси в плену, время на исходе...",
         image: "../images/find_love.webp",
         choices: [
@@ -213,40 +212,40 @@ const story = {
             { text: "Испугаться и убежать", next: "find_run" }
         ]
     },
-    find_run:{
+    find_run:{ // Испугаться и убежать
         text: "Райн понял, что Люси, не единственная девушка, поэтому побежал домой",
         image: "../images/find_run.webp",
         choices: [
             { text: "Начать историю сначала", next: "start" }
         ]        
     },
-    result_find:{
+    result_find:{ // Спасьи по тихому
         text: "Райн спасает Люси. Они убагают из Оазиса и начинают новую жизнь.",
         image: "../images/result_find.webp",
         choices: [
             { text: "Начать историю сначала", next: "start" }
         ]        
     },
-    combat_entry: {
+    combat_entry: { // Сцена с дракой
         text: "Райан врывается с боем, но его сразу окружают. Шансы выбраться живым минимальны...",
         image: "../images/okruzhenie.webp",
         choices: []
     },
-    contact_allies: {
+    contact_allies: { 
         text: "Райан зовёт на помощь старых друзей, но друзья на то и старые, что их уже нет",
         image: "../images/contact_allies.webp",
         choices: [
             { text: "Продолжить одиночное задание", next: "go_oasis" }
         ]
     },
-    explore_oasis: {
+    explore_oasis: { // Сцена после драки
         text: "Райан исследует Оазис и находит скрытую лабораторию. Здесь есть что-то странное...",
         image: "../images/laboratory.webp",
         choices: [
             { text: "Исследовать лабораторию", next: "explore_lab" }
         ]
     },
-    explore_lab: {
+    explore_lab: { // Исследовать лабораторию 
         text: "Райан проникает в лабораторию и обнаруживает закрытую дверь с кодом, а также чулан уборщика",
         image: "../images/explore_lab.webp",
         choices: [
@@ -254,7 +253,7 @@ const story = {
             { text: "Зайти в чулан", next: "explore_stafRoom" }
         ]
     },
-    explore_stafRoom: {
+    explore_stafRoom: { // Зайти в чулан
         text: "Райан проникает в чулан и видит записку, на которой написано: У меня Беда Беда с головой, начальник сказал пароль эээ 202 и что-то между 6 и  ээээ",
         image: "../images/explore_stafRoom.webp",
         choices: [
@@ -262,7 +261,7 @@ const story = {
             { text: "Поискать еще чего", next: "find_someStaf" }
         ]
     },
-    find_someStaf: {
+    find_someStaf: { // Поискать еще чего 
         text: [
             "Райн поискал за шторкой и ничего не нашел",
             "Поискал в сундуке и не не нашел",
@@ -274,17 +273,88 @@ const story = {
         image: "../images/find_someStaf.webp",
         choices: [{ text: "Вернуться обратно", next: "explore_stafRoom" }]
     },
-    check: {
+    check: { // Сцена с открытием двери
         image: "../images/check.webp",
-        choices: [{ text: "Вернуться обратно", next: "explore_stafRoom" }]
+        choices: [{ text: "Вернуться обратно", next: "select_lab" }]
     },
-    meet_allies: {
-        text: "Союзники Райана приходят на помощь, и теперь у него есть новая информация для следующего шага.",
+    select_lab: { // Сцена в лаборатории после открытия двери
+        text: "Открыв дверь, Райан увидел галограмму одного свитка, а также ключи от машины",
+        image: "../images/select_lab.webp",
+        choices: [
+            { text: "Использовать свиток", next: "svitok" },
+            { text: "Взять ключи от машины", next: "find_car" }
+        ]
+    },
+    svitok: { // Использовать свиток
+        text: "Теперь Райан умеет играть в камень ножницы бумага!",
+        image: "../images/svitok.webp",
+        choices: [
+            { text: "Встретиться с злодеем", next: "enemy" }
+        ]
+    },
+    enemy:{ // Встреча с боссом
+        text: [
+            "***: Вот мы с тобой и встретились Райн",
+            "Райн: Ты кто такой и зачем ты украл мою Люси?",
+            "Мега Задира: Я Мега Задира и я решил тебе таким образом отомстить",
+            "Райн: Но.... ЗА что?",
+            "Мега Задира: НЕВАЖНО, настал момент расплаты",
+            "Райн: Хорошо, я готов к нашей битве",
+            "Мега Задира: Тебе нужно обыграть в К.Н.Б. 3 раза и тогда я освобожу Люси",
+            "Райн: Эмммм... Что? Так вот зачем свиток"
+        ],
+        image: "../images/enemy.webp",
+        choices: [
+            { text: "Сразиться", next: "fight" }
+        ]
+    }, // Бой с боссом 
+    fight:{ // Камень ножницы бумага
+        image: "../images/fight.webp",
         choices: []
     },
-    return_base: {
-        text: "Райан возвращается на базу, но Оазис всё время манит его. Что-то подсказывает ему, что он не закончил свою миссию.",
-        choices: []
+    fight_win:{ // Камень ножницы бумага финальная победа
+        text: "Райан Гослинг победил Мега Задиру. Мир спасен.",
+        image: "../images/fight_win.webp",
+        choices: [{ text: "Забрать Люси", next: "final" }]
+    },
+    fight_lose:{// Камень ножницы бумага финальное поражение
+        text: "Мега Задира победил Райана. Это конец...",
+        image: "../images/fight_lose.webp",
+        choices: [{ text: "Начать историю сначала", next: "start" }]
+    },
+    final:{ // Финал
+        text: "Райн Гослинг спас Люси. Все наладилось. Жизнь стала прекрасной.",
+        image: "../images/result_find.webp",
+        choices: [{ text: "Начать историю сначала", next: "start" }]
+    },
+    draw:{ // Ничья
+        text: "НИЧЬЯ",
+        image: "../images/draw.webp",
+        choices: [{ text: "Еще раз", next: "fight" }]
+    },
+    lose:{ // Поражение
+        text: "Поражение",
+        image: "../images/lose.webp",
+        choices: [{ text: "Еще раз", next: "fight" }]
+    },
+    win:{ // Победа
+        text: "Победа",
+        image: "../images/win.webp",
+        choices: [{ text: "Еще раз", next: "fight" }]
+    },
+    find_car:{ // Взять ключи
+        text: "Райн находит ту самую машину из Drive",
+        image: "../images/find_car.webp",
+        choices: [
+            { text: "Сесть в машину", next: "try_car" }
+        ]
+    }, 
+    try_car:{ // Сесть в машину
+        text: "Райана окутала печаль, ведь машина не завелась, но и эта история не про это",
+        image: "../images/try_car.webp",
+        choices: [
+            { text: "Все таки забрать свиток", next: "svitok" }
+        ]
     }
 };
 
@@ -293,9 +363,9 @@ let currentSceneKey = 'start';
 
 function enterCode(sceneKey, pass) {
     let scene = sceneKey;
-    const dialogueElement = document.getElementById('dialogue');
-    const inpass = document.getElementById('pwinp');
-    const butpass = document.getElementById('pwrd');
+    let dialogueElement = document.getElementById('dialogue');
+    let inpass = document.getElementById('pwinp');
+    let butpass = document.getElementById('pwrd');
 
     let pr = parseInt(document.getElementById("pwinp").value);
 
@@ -317,7 +387,7 @@ function typeWriter(text, element, callback) {
     text = text.replace(/\s+/g, ' ');
 
     let i = 0;
-    const speed = 15;  // Скорость печати (в миллисекундах между символами)
+    let speed = 15;  // Скорость печати (в миллисекундах между символами)
     element.innerText = ''; // Очищаем элемент перед началом
 
     function type() {
@@ -334,19 +404,27 @@ function typeWriter(text, element, callback) {
 }
 
 function displayChoices(scene) {
-    const choice1 = document.getElementById('choice1');
-    const choice2 = document.getElementById('choice2');
+    let choice1 = document.getElementById('choice1');
+    let choice2 = document.getElementById('choice2');   
 
     if (scene.choices && scene.choices.length > 0) {
         choice1.innerText = scene.choices[0].text;
         choice1.style.display = 'inline-block';
         choice1.onclick = () => {
-            currentSceneKey = scene.choices[0].next;
-            displayScene(scene.choices[0].next);
+            if (scene.choices[0].text === "Начать историю сначала"){
+                resetGame();
+                currentSceneKey = 'start';
+                displayScene(currentSceneKey);
+            }  
+            else{
+                currentSceneKey = scene.choices[0].next;
+                displayScene(scene.choices[0].next);    
+            }
         };
 
         if (scene.choices.length > 1) {
             choice2.innerText = scene.choices[1].text;
+            console.log(currentSceneKey);
             choice2.style.display = 'inline-block';
             choice2.onclick = () => {
                 currentSceneKey = scene.choices[1].next;
@@ -355,7 +433,8 @@ function displayChoices(scene) {
         } else {
             choice2.style.display = 'none';
         }
-    } else {
+    }
+    else {
         choice1.style.display = 'none';
         choice2.style.display = 'none';
     }
@@ -368,19 +447,32 @@ document.getElementById('arrowBtn').onclick = function() {
 
 
 function displayScene(sceneKey) {
-    const scene = story[sceneKey];
-    const dialogueElement = document.getElementById('dialogue');
-    const combatButton = document.getElementById('combatButton');
-    const arrowBtn = document.getElementById('arrowBtn');
-    const inpass = document.getElementById('pwinp');
-    const butpass = document.getElementById('pwrd');
-    const screenElement = document.getElementById('screen');  // Элемент, где будет отображаться изображение
+    let scene = story[sceneKey];
+    let dialogueElement = document.getElementById('dialogue');
+    let combatButton = document.getElementById('combatButton');
+    let arrowBtn = document.getElementById('arrowBtn');
+    let inpass = document.getElementById('pwinp');
+    let butpass = document.getElementById('pwrd');
+    let screenElement = document.getElementById('screen');  // Элемент, где будет отображаться изображение
     if (sceneKey === 'combat_entry') {
         startCombat('explore_oasis');  // Запускаем механику боя
     } 
     else {
         // Скрываем кнопку боя при других сценах
         combatButton.style.display = 'none';
+    }
+
+    if (sceneKey === 'fight') {
+        dialogueElement.innerText = ""; 
+        document.getElementById('fight').style.display = 'block';  // Показать кнопки боя
+        document.getElementById('choice1').style.display = 'none';  // Скрыть другие кнопки выбора
+        document.getElementById('choice2').style.display = 'none';
+    } else if (sceneKey === 'draw' || sceneKey === 'lose' || sceneKey === 'win'){
+        document.getElementById('fight').style.display = 'none';
+    }
+
+    if (sceneKey === "enemy"){
+        arrowBtn.style.display = 'block';
     }
 
     if (sceneKey === 'check'){
@@ -392,7 +484,7 @@ function displayScene(sceneKey) {
     // Обновляем картинку для текущей сцены
     if (scene.image) {
         // Создаём новый элемент <img> для картинки
-        const imageElement = document.createElement('img');
+        let imageElement = document.createElement('img');
         imageElement.src = scene.image;  // Устанавливаем путь к картинке
         imageElement.alt = "Scene image";  // Альтернативный текст изображения
         imageElement.style.display = 'block';  // Убедимся, что картинка будет видимой
@@ -428,13 +520,13 @@ function resetGame() {
     document.getElementById('choice2').style.display = 'none';
     document.getElementById('combatButton').style.display = 'none';  // Скрыть кнопку боя
     document.getElementById('arrowBtn').style.display = 'inline-block';  // Показать стрелку
-    const dialogueElement = document.getElementById('dialogue');
+    let dialogueElement = document.getElementById('dialogue');
     dialogueElement.innerText = "";  // Очистить текст диалога
 }
 
 function handleDefeat() {
-    const dialogueElement = document.getElementById('dialogue');
-    const rulesElement = document.getElementById('rules'); // Если у вас есть правила/текст инструкций
+    let dialogueElement = document.getElementById('dialogue');
+    let rulesElement = document.getElementById('rules'); // Если у вас есть правила/текст инструкций
     document.getElementById('combatButton').style.display = 'none'; 
     rulesElement.style.display = 'none';
     dialogueElement.innerText = "Вы не успели... Начните заново!";
@@ -450,14 +542,14 @@ let timer;           // Таймер
 
 function startCombat(sceneKey) {
     clickCount = 0;  // Сбрасываем счётчик кликов
-    const combatButton = document.getElementById('combatButton');
-    const dialogueElement = document.getElementById('dialogue');
+    let combatButton = document.getElementById('combatButton');
+    let dialogueElement = document.getElementById('dialogue');
     let rulesElement = document.getElementById('rules');
 
     // Обновляем текст инструкции и проверяем выполнение
     rulesElement.style.display = 'block';
     rulesElement.innerText = "Нажмите на кнопку 30 раз за 15 секунд, чтобы выжить!";
-    
+        
     // Скрываем кнопку перед её отображением
     combatButton.style.display = 'none';
 
@@ -488,4 +580,53 @@ function startCombat(sceneKey) {
 document.getElementById('combatButton').onclick = function() {
     clickCount++;
 };
+
+let wins = 0;
+let loses = 0;
+const choices = ['Камень', 'Ножницы', 'Бумага'];
+
+function fight(userChoice) {
+    let enemyChoice = choices[Math.floor(Math.random() * choices.length)];
+
+    if (userChoice === enemyChoice) {
+        displayScene('draw');
+        // alert(`Ничья! Оба выбрали ${userChoice}`);
+    } else if (
+        (userChoice === 'Камень' && enemyChoice === 'Ножницы') ||
+        (userChoice === 'Ножницы' && enemyChoice === 'Бумага') ||
+        (userChoice === 'Бумага' && enemyChoice === 'Камень')
+    ) {
+        wins++;
+        displayScene('win');
+    } else {
+        loses++;
+        displayScene('lose');
+    }
+
+    updateScore();  // Обновление счётчика
+
+    if (wins === 3) {
+        updateScore();
+        displayScene('fight_win'); // Следующая сцена после победы
+        resetGame(); // Сброс игры для следующего раза
+        wins = 0;
+        loses = 0;
+    } else if (loses === 3) {
+        updateScore();
+        displayScene('fight_lose'); // Сцена поражения
+        resetGame();
+        wins = 0;
+        loses = 0;
+    }
+}
+
+function updateScore() {
+    document.getElementById('wins').innerText = `Победы: ${wins}`;
+    document.getElementById('loses').innerText = `Поражения: ${loses}`;
+}
+
+document.getElementById('stone').onclick = () => fight('Камень');
+document.getElementById('paper').onclick = () => fight('Бумага');
+document.getElementById('snip').onclick = () => fight('Ножницы');
+
 
