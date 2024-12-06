@@ -153,14 +153,14 @@ function PLAY() {
     let characterImage = document.getElementById("characterImage");
     let backgroundImage = document.getElementById("backgroundImage");
     let textElement = document.getElementById("dialogue");
-    let container = document.getElementById("container");
+    let disp = document.getElementById("disp");
 
     if (zone.style.display === "none" || zone.style.display === "") {
         zone.style.display = "block";
         backgroundImage.src = "../images/start.jpg";
         backgroundImage.style.display = "block";
         typeWriter("Райан Гослинг в новелле про пропавшую Люси", textElement);
-        container.style.display = 'none';
+        disp.style.display = 'none';
     } else {
         zone.style.display = "none";
         characterImage.style.display = "none";
