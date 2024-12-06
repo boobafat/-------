@@ -135,8 +135,8 @@ function solveTask4_1() {
 function solveTask4_2() {
     let A = parseInt(document.getElementById("A4").value);
     let N = parseInt(document.getElementById("N4").value);
-    var sum = 1; 
-    var term = 1; 
+    let sum = 1; 
+    let term = 1; 
 
     for (let i = 1; i <= N; i++) {
         term *= A; 
@@ -179,7 +179,7 @@ const story = {
         image: "../images/start.webp",
         choices: [
             { text: "Отправиться в Оазис немедленно", next: "go_oasis" },
-            { text: "Попробовать расшифровать больше данных", next: "check" }
+            { text: "Попробовать расшифровать больше данных", next: "decrypt_data" }   
         ]
     },
     go_oasis: { // Отправиться в Оазис немедленно
@@ -275,7 +275,7 @@ const story = {
     },
     check: { // Сцена с открытием двери
         image: "../images/check.webp",
-        choices: [{ text: "Вернуться обратно", next: "select_lab" }]
+        choices: [{ text: "Вернуться обратно", next: "explore_lab" }]
     },
     select_lab: { // Сцена в лаборатории после открытия двери
         text: "Открыв дверь, Райан увидел галограмму одного свитка, а также ключи от машины",
@@ -313,17 +313,17 @@ const story = {
         choices: []
     },
     fight_win:{ // Камень ножницы бумага финальная победа
-        text: "Райан Гослинг победил Мега Задиру. Мир спасен.",
+        text: " Райан Гослинг победил Мега Задиру. Мир спасен.",
         image: "../images/fight_win.webp",
         choices: [{ text: "Забрать Люси", next: "final" }]
     },
     fight_lose:{// Камень ножницы бумага финальное поражение
-        text: "Мега Задира победил Райана. Это конец...",
+        text: " Мега Задира победил Райана. Это конец...",
         image: "../images/fight_lose.webp",
         choices: [{ text: "Начать историю сначала", next: "start" }]
     },
     final:{ // Финал
-        text: "Райн Гослинг спас Люси. Все наладилось. Жизнь стала прекрасной.",
+        text: " Райн Гослинг спас Люси. Все наладилось. Жизнь стала прекрасной.",
         image: "../images/result_find.webp",
         choices: [{ text: "Начать историю сначала", next: "start" }]
     },
@@ -372,7 +372,7 @@ function enterCode(sceneKey, pass) {
     if (pr === pass) {
         inpass.style.display = 'none';
         butpass.style.display = 'none';
-        currentSceneKey = scene.choices[0].next;
+        currentSceneKey = 'select_lab';
         displayScene(currentSceneKey);
         displayChoices(currentSceneKey)
 
@@ -382,21 +382,29 @@ function enterCode(sceneKey, pass) {
 }
 
 // Функция для анимации печати текста
-function typeWriter(text, element, callback) {
-    // Заменяем несколько пробелов на единичный пробел
-    text = text.replace(/\s+/g, ' ');
+let currentTypeWriterTimeout = null; // Глобальная переменная для хранения ID таймайута
 
+function typeWriter(text, element, callback) {
+    // Оччистка таймаутов
+    if (currentTypeWriterTimeout) {
+        clearTimeout(currentTypeWriterTimeout);
+    }
+
+    text = text.replace(/\s+/g, ' ');
     let i = 0;
-    let speed = 15;  // Скорость печати (в миллисекундах между символами)
-    element.innerText = ''; // Очищаем элемент перед началом
+    let speed = 15;
+    element.innerText = ''; 
 
     function type() {
         if (i < text.length) {
             element.innerText += text.charAt(i);
             i++;
-            setTimeout(type, speed); // Рекурсивный вызов для следующего символа
-        } else if (callback) {
-            callback(); // Вызов обратного вызова по завершению печати
+            currentTypeWriterTimeout = setTimeout(type, speed);
+        } else {
+            currentTypeWriterTimeout = null;
+            if (callback) {
+                callback();
+            }
         }
     }
 
@@ -458,7 +466,8 @@ function displayScene(sceneKey) {
         startCombat('explore_oasis');  // Запускаем механику боя
     } 
     else {
-        // Скрываем кнопку боя при других сценах
+        inpass.style.display = 'none';
+        butpass.style.display = 'none';
         combatButton.style.display = 'none';
     }
 
@@ -473,6 +482,8 @@ function displayScene(sceneKey) {
 
     if (sceneKey === "enemy"){
         arrowBtn.style.display = 'block';
+        document.getElementById('choice1').style.display = 'none';  // Скрыть другие кнопки выбора
+        document.getElementById('choice2').style.display = 'none';
     }
 
     if (sceneKey === 'check'){
