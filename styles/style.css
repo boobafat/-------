@@ -313,6 +313,68 @@ p {
 
 }
 
+#products-container {
+    display: flex;
+    flex-wrap: wrap;
+    border: solid #41484E;
+    background-color: #111C1E;
+
+  }
+  
+  .product-card {
+    border: solid #41484E;
+    padding: 1rem;
+    border-radius: 5px;
+    width: 270px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin: 10px 10px 0 10px;
+    background-color: #000000;
+  }
+  
+  .product-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 0.5rem;
+    background-color: #000000;
+  }
+
+.findProduct{
+    display: flex;
+    #search-input{
+        background-color: #000000;
+        width: 100%;
+        font-size: 22px;
+        padding: 10px 0 10px 10px;
+        margin-bottom: 0px;
+    }
+    #search-button{
+        background-color: #000000;
+        width: 20%;
+        height: 50px;
+        border: solid #41484E;
+    }
+}
+
+.proco{
+    background-color: #010B0C;
+    margin-top: 0px;
+    padding: 0px 0 10px 0px;
+}
+
+.batoni{
+    display: flex;
+    p{
+        border-radius: 10px;
+        padding: 7px;
+        background-color: #111C1E;
+        margin: 10px 15px 0px 0px;
+    }
+}
+.filter{
+    display: none;
+}
 @media screen and (max-width: 980px) {
     .burger_menu{
         right: 10%;
@@ -353,6 +415,37 @@ p {
     }
     p {
         font-size: 24px;
+    }
+    .findProduct{
+        display: flex;
+        flex-direction: column;
+        #search-input{
+            width: 100%;
+        }
+        #search-button{
+            width: 100%;
+        }
+    }
+    .proco{
+        width: 90%;
+        p{
+            font-size: 18px;
+        }
+    }
+    .filter{
+        display: block;
+        border-radius: 10px;
+        padding: 5px;
+        background-color: #111C1E;
+        width: 130px;
+        margin: 10px 0px 0px 56%;
+        p{
+            padding: 0px 5px 0px 5px;
+            margin-top: 0px;
+        }
+    }
+    .batoni{
+        display: none;
     }
     .gameZone{
     .screen{
@@ -409,5 +502,6 @@ p {
             }
         }
     }
+
 }
 }

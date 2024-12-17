@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laba 6</title>
+    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&family=Playfair+Display+SC:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&display=swap" rel="stylesheet">
+</head>
+
+<header>
+  <h1>by Protsenko V.V.</h1>
+</header>
+
+<body>
+    <div class="container" id="container">
+        <div class="menu">
+          <div class="indicator">
+            <div class="circle1"></div>
+            <div class="circle2"></div>
+            <div class="circle3"></div>
+          </div>
+          <div class="links">
+            <div class="burger" onclick="Burger()">MENU</div>
+          </div>
+        </div>
+        <div class="burger_menu" id="burger_menu">
+          <div class="burger_content">
+            <a class="burger_link" href="../index.html">Лабораторная №2</a>
+            <a class="burger_link" href="./lbthrd.html">Лабораторная №3</a>
+            <a class="burger_link" href="./lbfour.html">Лабораторная №4</a>
+            <a class="burger_link" href="./lbfive.html">Лабораторная №5</a>
+          </div>
+        </div>
+        <div class="findProduct">
+            <input type="text" id="search-input" placeholder="Поиск...">
+            <button id="search-button">Поиск</button>
+        </div>
+        <div class="filter">
+          <p>Filters ▼</p>
+        </div>
+        <div class="batoni">
+          <p class="pbatoni">Size ▼</p>
+          <p class="pbatoni">Colour ▼</p>
+          <p class="pbatoni">Gender ▼</p>
+          <p class="pbatoni">Price ▼</p>
+          <p class="pbatoni">Activity ▼</p>
+          <p class="pbatoni">Weight ▼</p>
+          <p class="pbatoni">Type ▼</p>
+        </div>
+        <div class="proco">
+            <p id="product-count"></p>
+        </div>
+        <div id="products-container"></div>
+
+    </div> 
+
+    <script src="../script/scriptlab6-7.js"></script>
+</body>
+
+<footer>
+    <p>Никаких прав нет и защищать нечего</p>
+</footer>
+
+</html>

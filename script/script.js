@@ -643,3 +643,7 @@ document.getElementById('paper').onclick = () => fight('Бумага');
 document.getElementById('snip').onclick = () => fight('Ножницы');
 
 
+
+
+
+
