@@ -35,10 +35,10 @@ function displayProducts(filteredProducts, totalFoundProducts, totalBaseFound) {
   productCountText.textContent = `Количество найденных товаров: ${totalFoundProducts} / Всего товаров: ${totalBaseFound}`;
 }
 
-async function fetchTotalCount(query) {
-  let res = await fetch(`https://dummyjson.com/products/search?q=${query}`);
-  let data = await res.json();
-  return data.total;
+function fetchTotalCount(query) {
+  return fetch(`https://dummyjson.com/products/search?q=${query}`)
+    .then(res => res.json())
+    .then(data => data.total);
 }
 
 fetch('https://dummyjson.com/products?limit=30&skip=122&select=title,price,thumbnail,description')
@@ -47,9 +47,10 @@ fetch('https://dummyjson.com/products?limit=30&skip=122&select=title,price,thumb
     products = data.products;
     totalProductsCount = products.length;
     displayProducts(products, products.length, totalProductsCount);
-  });
+  })
+  .catch(error => console.error('Ошибка при загрузке продуктов:', error));
 
-document.getElementById('search-button').addEventListener('click', async () => {
+document.getElementById('search-button').addEventListener('click', () => {
   let searchInput = document.getElementById('search-input');
   let query = searchInput.value.toLowerCase();
 
@@ -57,9 +58,11 @@ document.getElementById('search-button').addEventListener('click', async () => {
     product.title.toLowerCase().includes(query)
   );
 
-  let totalBaseFound = await fetchTotalCount(query);
-
-  displayProducts(filteredProducts, filteredProducts.length, totalBaseFound);
+  fetchTotalCount(query)
+    .then(totalBaseFound => {
+      displayProducts(filteredProducts, filteredProducts.length, totalBaseFound);
+    })
+    .catch(error => console.error('Ошибка при поиске товаров:', error));
 });
 
 document.getElementById('addProductButton').addEventListener('click', () => {
