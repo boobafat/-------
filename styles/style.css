@@ -314,9 +314,9 @@ p {
 }
 
 #products-container {
-    display: grid; /* Используем Grid Layout */
-    grid-template-columns: repeat(auto-fill, minmax(270px, 1fr)); /* Автоматическое создание колонок */
-    gap: 15px; /* Расстояние между карточками */
+    display: grid; 
+    grid-template-columns: repeat(auto-fill, minmax(270px, 1fr)); 
+    gap: 15px; 
     padding: 10px;
     border: solid #41484E;
     background-color: #111C1E;
