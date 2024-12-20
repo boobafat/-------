@@ -578,6 +578,7 @@ p {
     .info-description {
         width: 100%;
         font-size: 18px;
+        margin-left: 5%;
     }
     #addProductForm {
         width: 70%;
