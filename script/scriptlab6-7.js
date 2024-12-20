@@ -97,9 +97,11 @@ addProductButton.addEventListener('click', () => {
       thumbnail: defaultThumbnail,
     };
 
-    // Добавляем товар в массив и обновляем отображение
+    // Добавляем товар в массив
     products.push(newProduct);
-    displayProducts(products);
+
+    // Обновляем отображение товаров и статистики
+    displayProducts(products, products.length, products.length);
 
     // Очищаем поля ввода
     newProductTitle.value = '';
