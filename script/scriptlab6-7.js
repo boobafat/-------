@@ -48,7 +48,6 @@ fetch('https://dummyjson.com/products?limit=30&skip=122&select=title,price,thumb
     totalProductsCount = products.length;
     displayProducts(products, products.length, totalProductsCount);
   })
-  .catch(error => console.error('Ошибка при загрузке продуктов:', error));
 
 document.getElementById('search-button').addEventListener('click', () => {
   let searchInput = document.getElementById('search-input');
@@ -62,7 +61,6 @@ document.getElementById('search-button').addEventListener('click', () => {
     .then(totalBaseFound => {
       displayProducts(filteredProducts, filteredProducts.length, totalBaseFound);
     })
-    .catch(error => console.error('Ошибка при поиске товаров:', error));
 });
 
 document.getElementById('addProductButton').addEventListener('click', () => {
