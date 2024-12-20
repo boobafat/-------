@@ -53,7 +53,20 @@
         <div class="proco">
             <p id="product-count"></p>
         </div>
+        <div class="addProduct">
+          <button onclick="OpenAdd()">Добавить</button>
+        </div>
         <div id="products-container"></div>
+        <div id="products-info">
+          <button id="productsClose" onclick="CloseInfo()">☓</button>
+        </div>
+        <div id="addProductForm">
+          <button id="productsClose" onclick="CloseAdd()">☓</button>
+          <input id="newProductTitle" type="text" placeholder="Название товара" required>
+          <input id="newProductDescription" type="text" placeholder="Описание товара" required>
+          <input id="newProductPrice" type="number" placeholder="Цена товара" required>
+          <button id="addProductButton">Добавить товар</button>
+        </div>
 
     </div> 
 

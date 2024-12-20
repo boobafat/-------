@@ -375,6 +375,112 @@ p {
 .filter{
     display: none;
 }
+
+.butInfo{
+    margin-top: 10px;
+}
+
+.butInfo:hover{
+    background-color: #1A2A2D;
+}
+#products-info {
+    width: 60%; 
+    background-color: #1a1a1a; 
+    display: none; 
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    border-radius: 10px;
+    z-index: 1000;
+    padding: 100px 0 100px 0;
+  }
+  
+  #productsClose {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #1a1a1a;;
+    color: #f5f5f5;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+  }
+  
+  .productFlex {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .info-image-container {
+    flex: 1;
+    text-align: center;
+  }
+  
+  .info-image {
+    max-width: 100%; 
+    border-radius: 10px;
+    background-color: black;
+    border: solid #41484E;
+  }
+  
+  .info-details {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+  }
+  
+  .info-title {
+    font-size: 42px;
+    margin: 0;
+  }
+  
+  .info-price {
+    font-size: 32px; 
+    margin: 0;
+  }
+  
+  .info-description {
+    width: 90%;
+    font-size: 24px;
+    color: #e5e5e5;
+  }
+
+  #addProductForm{
+    width: 30%; 
+    background-color: #1a1a1a; 
+    display: none; 
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    border-radius: 10px;
+    z-index: 1000;
+    padding: 100px 0 100px 0;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    input{
+        background-color: black;
+    }
+  }
+  #addProductButton{
+    background-color: black;
+    border: solid #41484E;
+}
+.addProduct{
+    display: flex;
+    flex-direction: row-reverse;
+    margin-bottom: 15px;
+    button{
+        background-color: black;
+        border: solid #41484E;
+    }
+}
 @media screen and (max-width: 980px) {
     .burger_menu{
         right: 10%;
@@ -447,7 +553,41 @@ p {
     .batoni{
         display: none;
     }
+    #products-info {
+        width: 100%;
+    }
+    .productFlex{
+        flex-direction: column;
+        align-items: center
+    }
+    .info-image-container{
+        width: 250px;
+        margin-top: 20px;
+    }
+    #productsClose {
+        top: 45px;
+        right: 5px;
+        font-size: 28px;
+    }
+    .info-title{
+        text-align: center;
+    }
+    .info-price {
+        text-align: center;
+    }
+    .info-description {
+        width: 100%;
+        font-size: 18px;
+        margin-left: 5%;
+    }
+    #addProductForm {
+        width: 70%;
+        #productsClose {
+            top: 15px;
+        }
+    }
     .gameZone{
+    }
     .screen{
         width: 100%;
         margin: 0 auto;
